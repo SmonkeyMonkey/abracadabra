@@ -1,0 +1,26 @@
+[package]
+name = "strategy-mock"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "strategy_mock"
+
+[features]
+no-entrypoint = []
+cpi = ["no-entrypoint"]
+default = []
+devnet = []
+localnet = []
+mainnet-beta = []
+
+[dependencies]
+anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"
+spl-token = { version = "3.5.0", features = ["no-entrypoint"] }
+common = { path = "../../packages/common", version = "0.1.0", features = ["library"]}
+# bentobox =  { path = "../bentobox", version = "0.1.0", features = ["no-entrypoint"]}
+# bentobox-package = { path = "../../packages/bentobox", version= "0.1.0", features = ["library"]}
+# strategy-package = { path = "../../packages/strategy", version= "0.1.0", features = ["library"]}

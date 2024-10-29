@@ -1,0 +1,21 @@
+[package]
+name = "bentobox-package"
+version = "0.1.0"
+description = "Bentobox package"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "bentobox_package"
+
+[features]
+library = []
+
+[dependencies]
+anchor-lang = { version="0.28.0", features=["init-if-needed"] }
+anchor-spl = "0.28.0"
+solana-program = "1.16.27"
+common = { path = "../common", version= "0.1.0", features = ["library"]}
+strategy-package = { path = "../strategy", version= "0.1.0", features = ["library"]}
+
+# strategy-mock ={ path = "../../programs/strategy-mock",version = "0.1.0",features = ["cpi"]}

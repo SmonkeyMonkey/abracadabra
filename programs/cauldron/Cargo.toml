@@ -1,0 +1,35 @@
+[package]
+name = "cauldron"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "cauldron"
+
+[features]
+no-entrypoint = []
+no-idl = []
+cpi = ["no-entrypoint"]
+# DO NOT EDIT default directly. -- --features "CLUSTER"
+# Example: anchor test -- --features "devnet"
+default = ["devnet"]
+devnet = []
+localnet = []
+mainnet-beta = []
+
+[dependencies]
+anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"
+spl-token = { version = "3.5.0", features = ["no-entrypoint"] }
+bentobox =  { path = "../bentobox", version = "0.1.0", features = ["no-entrypoint", "cpi"]}
+common = { path = "../../packages/common", version = "0.1.0", features = ["library"]}
+swapper-package = { path = "../../packages/swapper", version = "0.1.0", features = ["library"]}
+switchboard-program = "0.2.0"
+# switchboard-v2 = "0.1.22"
+switchboard-solana = "0.28.94"
+    
+swapper-orca ={ path = "../swapper-orca",features = ["cpi"]}
+swapper-raydium = {path = "../swapper-raydium",features = ["cpi"]}
+ahash = "=0.8.6"

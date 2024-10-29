@@ -1,0 +1,27 @@
+[package]
+name = "swapper-orca"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "swapper_orca"
+
+[features]
+no-entrypoint = []
+cpi = ["no-entrypoint"]
+default = []
+devnet = []
+localnet = []
+mainnet-beta = []
+
+[dependencies]
+anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"
+spl-token = { version = "3.5.0", features = ["no-entrypoint"] }
+bentobox =  { path = "../bentobox", version = "0.1.0", features = ["no-entrypoint", "cpi"]}
+spl-token-swap = { version = "2.1.0", features = ["no-entrypoint"] }
+solana-program = "1.16"
+common = { path = "../../packages/common", version = "0.1.0", features = ["library"]}
+swapper-package = { path = "../../packages/swapper", version = "0.1.0", features = ["library"]}

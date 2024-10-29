@@ -1,0 +1,46 @@
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+bentobox = "DpJxHsyo8ndyjS1fHzfSRZr1vK3EbiGevNok81dGCvCd"
+cauldron = "FCWEJMXfDpMZQvBPCwkZWBt3XftojoFSiqFzkWAv8rvd"
+strategy_mock = "BNGV7QCu6kUBK8rQqgzQsqHvEjignzyAJAkdQRA4gLn8"
+swapper_orca = "3Hm9snMqyCdNHXFZ6B3jgwnY1gE86N12WrcPsfniHyjf"
+swapper_raydium = "Bbh4JSnawctDsQZDgme2d9S8cH16nQoJSukPmAv8qLPM"
+
+[programs.devnet]
+bentobox = "DpJxHsyo8ndyjS1fHzfSRZr1vK3EbiGevNok81dGCvCd"
+cauldron = "FCWEJMXfDpMZQvBPCwkZWBt3XftojoFSiqFzkWAv8rvd"
+strategy_mock = "BNGV7QCu6kUBK8rQqgzQsqHvEjignzyAJAkdQRA4gLn8"
+swapper_orca = "3Hm9snMqyCdNHXFZ6B3jgwnY1gE86N12WrcPsfniHyjf"
+swapper_raydium = "Bbh4JSnawctDsQZDgme2d9S8cH16nQoJSukPmAv8qLPM"
+
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/Users/maksym/.config/solana/id.json"
+
+[scripts]
+bentobox_devnet = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/devnet/bentobox/*.ts"
+bentobox_flash = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/devnet/bentobox/flash_loan.ts"
+bentobox_localnet = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/bentobox/*.ts"
+
+
+bentobox_loss = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/bentobox/bentobox_set_strategy_loss.ts"
+bentobox_profit = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/bentobox/bentobox_set_strategy_profit.ts"
+
+cauldron_balance = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/cauldron/cauldron_create_user_balance.ts"
+cauldron_devnet = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/devnet/cauldron/*.ts"
+cauldron_feed = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/cauldron/cauldron_update_switchboard_data_feed.ts"
+cauldron_init = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/cauldron/cauldron_init.ts"
+cauldron_localnet = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/cauldron/*.ts"
+cauldron_mim = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/cauldron/cauldron_borrow.ts"
+cauldron_price = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/cauldron/cauldron_is_valid_price.ts"
+
+cauldron_switchboard = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/cauldron/cauldron_switchboard_price.ts"
+
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/localnet/**/*.ts"
